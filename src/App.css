@@ -28,3 +28,22 @@
 .me {
   background-color: crimson
 }
+
+ul{
+	margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.616);
+  min-height: 40px;
+}
+
+li{
+	display: inline;
+  padding: 10px 20px 0 20px;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}

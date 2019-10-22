@@ -7,32 +7,23 @@ import NotFound from "./screens/not-found/notFound";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.handleClick = this.handleClick;
-    this.handleOutsideClick = this.handleOutsideClick;
-
-    this.state = {
-      popupVisible: false
-    };
-  }
+  state = {
+    isOpen: false
+  };
 
   handleClick = () => {
-    if (!this.state.popupVisible) {
-      // attach/remove event handler
+    if (!this.state.isOpen) {
       document.addEventListener("click", this.handleOutsideClick, false);
     } else {
       document.removeEventListener("click", this.handleOutsideClick, false);
     }
 
     this.setState(prevState => ({
-      popupVisible: !prevState.popupVisible
+      isOpen: !prevState.isOpen
     }));
   };
 
   handleOutsideClick = e => {
-    // ignore clicks on the component itself
     if (this.node.contains(e.target)) {
       return;
     }

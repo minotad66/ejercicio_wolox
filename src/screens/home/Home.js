@@ -12,9 +12,9 @@ class Home extends Component {
           {" "}
           {this.props.state.isOpen ? "close" : "open"}{" "}
         </button>
-        {this.props.state.popupVisible && (
+        {this.props.state.isOpen && (
           <Modal handleClick={this.props.handleClick} modalContent='modal-content' button='button'>
-            <h1>Esto es un modal desde el padre</h1>
+            <h1>Esto es un modal desde home</h1>
           </Modal>
         )}
       </div>

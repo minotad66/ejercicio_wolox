@@ -3,6 +3,7 @@ import SubaboutYou from "./SubaboutYou";
 import SubaboutME from "./SubaboutME";
 import Modal from "../../components/modal";
 import { Link } from "react-router-dom";
+import "./AboutStyle.css"
 import { tsPropertySignature } from "@babel/types";
 
 function About(props) {
@@ -33,9 +34,9 @@ function About(props) {
             </button>
           </header>
           <div className="popover-container" ref={props.node}>
-            {props.state.popupVisible && (
+            {props.state.isOpen && (
               <Modal handleClick={props.handleClick} modalContent='modal-content1' button='button'>
-                <h1>Esto es un modal desde el padre</h1>
+                <h1>Esto es un modal desde about</h1>
               </Modal>
             )}
           </div>
